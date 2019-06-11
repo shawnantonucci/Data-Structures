@@ -67,9 +67,15 @@ class DoublyLinkedList:
 
     def add_to_tail(self, value):
         pass
+        new_node = ListNode(value)
+        self.tail.insert_after(new_node)
+        self.tail = new_node
 
     def remove_from_tail(self):
         pass
+        temp_node = self.tail.value
+        self.tail.delete()
+        return temp_node
 
     def move_to_front(self, node):
         pass
