@@ -46,11 +46,15 @@ class BinarySearchTree:
 
     while current:
 
-      if current.value > max:
+      if current.value > max_value:
         max = current.value
         current = current.right
 
     return max
 
   def for_each(self, cb):
-    pass
+    cb(self.value)
+    if self.left:
+      self.left.for_each(cb)
+    if self.right:
+      self.right.for_each(cb)
